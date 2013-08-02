@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 /*
 	Physical file offset patch by Morten Husveit
 */
+#define TORRENT_USE_WSTRING 1
 
 #include "libtorrent/pch.hpp"
 #include "libtorrent/config.hpp"

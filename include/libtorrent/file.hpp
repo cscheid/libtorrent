@@ -32,6 +32,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 #ifndef TORRENT_FILE_HPP_INCLUDED
 #define TORRENT_FILE_HPP_INCLUDED
+#define TORRENT_USE_WSTRING 1
 
 #include <memory>
 #include <string>

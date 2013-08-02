@@ -32,6 +32,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 #ifndef TORRENT_CREATE_TORRENT_HPP_INCLUDED
 #define TORRENT_CREATE_TORRENT_HPP_INCLUDED
+#define TORRENT_USE_WSTRING 1
 
 #include "libtorrent/bencode.hpp"
 #include "libtorrent/peer_id.hpp"

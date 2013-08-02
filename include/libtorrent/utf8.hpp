@@ -32,6 +32,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 #ifndef TORRENT_UTF8_HPP_INCLUDED
 #define TORRENT_UTF8_HPP_INCLUDED
+#define TORRENT_USE_WSTRING 1
 
 #include "libtorrent/config.hpp"
 

@@ -29,6 +29,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 
 */
+#define TORRENT_USE_WSTRING 1
 
 #include "libtorrent/create_torrent.hpp"
 #include "libtorrent/file_pool.hpp"

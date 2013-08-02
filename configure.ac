@@ -313,6 +313,15 @@ AC_ARG_ENABLE(
   [[ARG_ENABLE_PYTHON_BINDING=no]]
 )
 
+AC_ARG_ENABLE(
+  [wstring],
+  [AS_HELP_STRING(
+    [--enable-wstring],
+    [build with wstring support [default=no]])],
+  [[ARG_ENABLE_WSTRING=$enableval]],
+  [[ARG_ENABLE_WSTRING=no]]
+)
+
 AC_ARG_WITH(
   [libgeoip],
   [AS_HELP_STRING(
@@ -500,6 +509,19 @@ AS_CASE(["$ARG_ENABLE_DHT"],
    AC_MSG_ERROR([Unknown option "$ARG_ENABLE_DHT". Use either "yes", "no" or "logging".])]
 )
 
+AC_MSG_CHECKING([whether to use wstring])
+AS_CASE(["$ARG_ENABLE_WSTRING"],
+  ["yes"|"on"], [
+      AC_MSG_RESULT([yes])
+      COMPILETIME_OPTIONS="$COMPILETIME_OPTIONS -DTORRENT_USE_WSTRING "
+    ],
+  ["no"|"off"], [
+      AC_MSG_RESULT([no])
+    ],
+  [AC_MSG_RESULT([$ARG_ENABLE_POOL_ALLOC])
+   AC_MSG_ERROR([Unknown option "$ARG_ENABLE_WSTRING". Use either "yes" or "no".])]
+)
+
 AC_MSG_CHECKING([whether pool allocators should be enabled])
 AS_CASE(["$ARG_ENABLE_POOL_ALLOC"],
   ["yes"|"on"], [
@@ -512,6 +534,7 @@ AS_CASE(["$ARG_ENABLE_POOL_ALLOC"],
   [AC_MSG_RESULT([$ARG_ENABLE_POOL_ALLOC])
    AC_MSG_ERROR([Unknown option "$ARG_ENABLE_POOL_ALLOC". Use either "yes" or "no".])]
 )
+
 
 AS_ECHO
 AS_ECHO "Checking for extra build files:"
@@ -731,6 +754,7 @@ Features:
   geoip support:        ${ARG_ENABLE_GEOIP:-yes}
   dht support:          ${ARG_ENABLE_DHT:-yes}
   pool allocators:      ${ARG_ENABLE_POOL_ALLOC:-yes}
+  wstring support:      ${ARG_ENABLE_WSTRING:-no}
 
 Extra builds:
   examples:             ${ARG_ENABLE_EXAMPLES:-no}

@@ -345,7 +345,7 @@ namespace libtorrent
 		TORRENT_ASYNC_CALL1(move_storage, save_path);
 	}
 
-#if TORRENT_USE_WSTRING
+// #if TORRENT_USE_WSTRING
 	void torrent_handle::move_storage(
 		std::wstring const& save_path) const
 	{
@@ -362,7 +362,7 @@ namespace libtorrent
 		wchar_utf8(new_name, utf8);
 		TORRENT_ASYNC_CALL2(rename_file, index, utf8);
 	}
-#endif // TORRENT_USE_WSTRING
+// #endif // TORRENT_USE_WSTRING
 
 	void torrent_handle::rename_file(int index, std::string const& new_name) const
 	{

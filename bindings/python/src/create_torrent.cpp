@@ -9,6 +9,7 @@
 
 using namespace boost::python;
 using namespace libtorrent;
+#define TORRENT_USE_WSTRING 1
 
 namespace
 {

@@ -32,6 +32,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 #ifndef TORRENT_TORRENT_HANDLE_HPP_INCLUDED
 #define TORRENT_TORRENT_HANDLE_HPP_INCLUDED
+#define TORRENT_USE_WSTRING 1
 
 #include <vector>
 #include <set>
@@ -402,10 +403,10 @@ namespace libtorrent
 		void move_storage(std::string const& save_path) const;
 		void rename_file(int index, std::string const& new_name) const;
 
-#if TORRENT_USE_WSTRING
+// #if TORRENT_USE_WSTRING
 		void move_storage(std::wstring const& save_path) const;
 		void rename_file(int index, std::wstring const& new_name) const;
-#endif
+// #endif
 
 		void super_seeding(bool on) const;
 

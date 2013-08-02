@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/env python
 # Copyright Arvid Norberg 2008. Use, modification and distribution is
 # subject to the Boost Software License, Version 1.0. (See accompanying
 # file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -20,12 +20,12 @@ while (not h.is_seed()):
 
 	state_str = ['queued', 'checking', 'downloading metadata', \
 		'downloading', 'finished', 'seeding', 'allocating', 'checking fastresume']
-	print('\r%.2f%% complete (down: %.1f kb/s up: %.1f kB/s peers: %d) %s' % \
-		(s.progress * 100, s.download_rate / 1000, s.upload_rate / 1000, \
-		s.num_peers, state_str[s.state]), end=' ')
+	print ('\r%.2f%% complete (down: %.1f kb/s up: %.1f kB/s peers: %d) %s' % \
+		       (s.progress * 100, s.download_rate / 1000, s.upload_rate / 1000, \
+				s.num_peers, state_str[s.state])),
 	sys.stdout.flush()
 
 	time.sleep(1)
 
-print(h.name(), 'complete')
+print h.name(), 'complete'
 

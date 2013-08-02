@@ -32,6 +32,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 #ifndef TORRENT_ESCAPE_STRING_HPP_INCLUDED
 #define TORRENT_ESCAPE_STRING_HPP_INCLUDED
+#define TORRENT_USE_WSTRING 1
 
 #include <string>
 #include <boost/limits.hpp>

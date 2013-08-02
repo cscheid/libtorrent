@@ -9,6 +9,8 @@
 #include <boost/lexical_cast.hpp>
 #include "gil.hpp"
 
+#define TORRENT_USE_WSTRING 1
+
 using namespace boost::python;
 using namespace libtorrent;
 
@@ -407,11 +409,11 @@ void bind_torrent_handle()
         .def("set_max_uploads", _(&torrent_handle::set_max_uploads))
         .def("set_max_connections", _(&torrent_handle::set_max_connections))
         .def("set_tracker_login", _(&torrent_handle::set_tracker_login))
-        .def("move_storage", _(move_storage0))
         .def("info_hash", _(&torrent_handle::info_hash))
         .def("force_recheck", _(&torrent_handle::force_recheck))
-        .def("rename_file", _(rename_file0))
         .def("set_ssl_certificate", &torrent_handle::set_ssl_certificate, (arg("cert"), arg("private_key"), arg("dh_params"), arg("passphrase")=""))
+        .def("move_storage", _(move_storage0))
+        .def("rename_file", _(rename_file0))
 #if TORRENT_USE_WSTRING
         .def("move_storage", _(move_storage1))
         .def("rename_file", _(rename_file1))
